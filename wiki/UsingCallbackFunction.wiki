@@ -1,4 +1,5 @@
 #summary Using callback functions with SubModal
+#labels Featured
 
  # Define the function that’ll be called on the opening page.
  # Pass the function you’d like to call into 'showPopWin'.
