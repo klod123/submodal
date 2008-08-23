@@ -1,19 +1,16 @@
 /**
- * SUBMODAL v1.5
+ * SUBMODAL v1.6
  * Used for displaying DHTML only popups instead of using buggy modal windows.
  *
- * By Seth Banks
- * http://www.subimage.com/
+ * By Subimage LLC
+ * http://www.subimage.com
  *
  * Contributions by:
  * 	Eric Angel - tab index code
  * 	Scott - hiding/showing selects for IE users
  *	Todd Huss - inserting modal dynamically and anchor classes
  *
- * Up to date code can be found at http://www.subimage.com/dhtml/subModal
- * 
- *
- * This code is free for you to use anywhere, just keep this comment block.
+ * Up to date code can be found at http://submodal.googlecode.com
  */
 
 // Popup code
@@ -34,8 +31,6 @@ var gTabbableTags = new Array("A","BUTTON","TEXTAREA","INPUT","IFRAME");
 if (!document.all) {
 	document.onkeypress = keyDownHandler;
 }
-
-
 
 /**
  * Initializes popup code on load.	
@@ -101,7 +96,6 @@ addEvent(window, "load", initPopUp);
 	* @argument returnFunc - function to call when returning true from the window.
 	* @argument showCloseBox - show the close box - default true
 	*/
-
 function showPopWin(url, width, height, returnFunc, showCloseBox) {
 	// show or hide the window close widget
 	if (showCloseBox == null || showCloseBox == true) {
@@ -282,31 +276,30 @@ function restoreTabIndexes() {
 
 
 /**
-* Hides all drop down form select boxes on the screen so they do not appear above the mask layer.
-* IE has a problem with wanted select form tags to always be the topmost z-index or layer
-*
-* Thanks for the code Scott!
-*/
+ * Hides all drop down form select boxes on the screen so they do not appear above the mask layer.
+ * IE has a problem with wanted select form tags to always be the topmost z-index or layer
+ *
+ * Thanks for the code Scott!
+ */
 function hideSelectBoxes() {
-	for(var i = 0; i < document.forms.length; i++) {
-		for(var e = 0; e < document.forms[i].length; e++){
-			if(document.forms[i].elements[e].tagName == "SELECT") {
-				document.forms[i].elements[e].style.visibility="hidden";
-			}
-		}
-	}
+  var x = document.getElementsByTagName("SELECT");
+
+  for (i=0;x && i < x.length; i++) {
+    x[i].style.visibility = "hidden";
+  }
 }
 
 /**
-* Makes all drop down form select boxes on the screen visible so they do not reappear after the dialog is closed.
-* IE has a problem with wanted select form tags to always be the topmost z-index or layer
-*/
+ * Makes all drop down form select boxes on the screen visible so they do not 
+ * reappear after the dialog is closed.
+ * 
+ * IE has a problem with wanting select form tags to always be the 
+ * topmost z-index or layer.
+ */
 function displaySelectBoxes() {
-	for(var i = 0; i < document.forms.length; i++) {
-		for(var e = 0; e < document.forms[i].length; e++){
-			if(document.forms[i].elements[e].tagName == "SELECT") {
-			document.forms[i].elements[e].style.visibility="visible";
-			}
-		}
-	}
+  var x = document.getElementsByTagName("SELECT");
+
+  for (i=0;x && i < x.length; i++){
+    x[i].style.visibility = "visible";
+  }
 }
