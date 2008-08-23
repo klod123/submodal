@@ -33,7 +33,7 @@ showPopWin('your_url_here.html', width, height, null);
 {{{
 <a class="submodal" href="modalContent.html">show modal window using class</a>
 <a class="submodal-200-400" href="modalContent.html">show modal window using class and overriding default size</a>
-}}
+}}}
 
 The first argument is the file to load, followed by width and height (integers). Any content that overflows these dimensions will scroll inside the modal, like a real window.
 
