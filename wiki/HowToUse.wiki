@@ -39,3 +39,7 @@ showPopWin('your_url_here.html', width, height, null);
 The first argument is the file to load, followed by width and height (integers). Any content that overflows these dimensions will scroll inside the modal, like a real window.
 
 The fourth argument allows you to pass a javascript function that will be called when the window is closed – by calling hidePopWin(true). hidePopWin will not call the return function by default. This is useful for cancel button functions.
+
+==Callback==
+
+If you'd like to return a value or execute some other code when the window is closed, see the [UsingCallbackFunction instructions on using a callback function here].
